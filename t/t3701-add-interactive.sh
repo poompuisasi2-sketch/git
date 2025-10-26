@@ -1438,8 +1438,8 @@ test_expect_success 'EOF quits' '
 	echo X >file &&
 	echo X >file2 &&
 	git add -p </dev/null >out &&
-	grep file out &&
-	! grep file2 out
+	test_grep file out &&
+	test_grep ! file2 out
 '
 
 test_done
